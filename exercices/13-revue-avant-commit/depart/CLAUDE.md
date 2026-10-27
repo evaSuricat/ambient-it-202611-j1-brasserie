@@ -24,8 +24,8 @@ Page web d'une brasserie-restaurant de Montreuil. Le brief complet est dans `bri
 
 - Aucun framework CSS ou JavaScript, aucune bibliothèque.
 - Aucune police web, aucune ressource chargée depuis un autre domaine : la page doit s'ouvrir sans Internet.
-- Aucun script avant l'exercice 11.
-- Ne pas inventer de contenu : tout texte vient de `brief.md` ou de `ressources/carte.md`. Si une information manque, le dire plutôt que combler.
+- Un seul script, `script.js`, qui lit `/api/carte`. Aucune bibliothèque.
+- Ne pas inventer de contenu : tout texte vient de `brief.md` ou de `carte.md`, à la racine du dossier. Si une information manque, le dire plutôt que combler.
 
 ## Façon de travailler
 

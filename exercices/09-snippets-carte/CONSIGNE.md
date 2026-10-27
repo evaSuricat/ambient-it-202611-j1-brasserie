@@ -6,7 +6,7 @@
 
 ## Ce qu'on fait
 
-`depart/` contient la page avec sa section carte vide. Cette fois, pas d'agent : la complétion Copilot, ligne à ligne, dans l'éditeur. `ressources/carte.md` du dépôt donne les noms et les prix ; l'ouvrir dans un onglet à côté, Copilot s'en sert comme contexte.
+`depart/` contient la page avec sa section carte vide. Cette fois, pas d'agent : la complétion Copilot, ligne à ligne, dans l'éditeur. `carte.md`, dans le dossier, donne les noms et les prix ; l'ouvrir dans un onglet à côté, Copilot s'en sert comme contexte.
 
 1. Dans `index.html`, dans la section carte, supprimer la phrase « La carte arrive. » et taper un commentaire :
 

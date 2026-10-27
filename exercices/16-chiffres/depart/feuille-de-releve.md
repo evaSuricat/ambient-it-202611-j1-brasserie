@@ -1,6 +1,6 @@
 # Feuille de relevé E16
 
-Une ligne par personne et par tâche. « Fait » : la condition « fini quand » de la tâche est remplie à six minutes. « Valide » : console sans erreur, section visible.
+Une ligne par personne et par tâche. « Fait » : la condition « fini quand » de la tâche est remplie à cinq minutes. « Valide » : console sans erreur, section visible.
 
 | Prénom | Groupe | Tâche | Avec IA | Fait (oui/non) | Valide (oui/non) | Lignes écrites | Remarque |
 |---|---|---|---|---|---|---|---|
@@ -21,5 +21,5 @@ Une ligne par personne et par tâche. « Fait » : la condition « fini quand »
 
 | | Sans IA | Avec IA |
 |---|---|---|
-| Tâches finies en six minutes | /  | /  |
+| Tâches finies en cinq minutes | /  | /  |
 | Dont valides | | |

@@ -12,7 +12,7 @@
 
    > 1. Écris charger.py : il crée carte.db (SQLite) avec une table carte (id, categorie, nom, description, prix) et la remplit depuis carte.csv. Relançable : il vide la table avant de recharger.
    > 2. Écris servir.py : un serveur http.server sur 127.0.0.1:8000 qui sert ce dossier sans cache, et répond sur /api/carte avec la carte en JSON, triée par catégorie puis par nom.
-   > 3. Dans index.html, remplace les deux listes de la carte par des listes vides remplies par un script.js qui appelle /api/carte. Garde le HTML actuel dans un `<noscript>`. Pas de bibliothèque.
+   > 3. Dans index.html, remplace les deux listes de la carte par des listes vides remplies par un script.js qui appelle /api/carte. Garde une version courte de la carte (quatre lignes par colonne) dans un `<noscript>`. Pas de bibliothèque.
 
 2. **Lire chaque requête SQL avant de lancer** : `CREATE TABLE`, `INSERT`, `SELECT`. Demander « explique la requête » au moindre doute.
 3. Lancer : `python charger.py` puis `python servir.py`, ouvrir http://127.0.0.1:8000/.

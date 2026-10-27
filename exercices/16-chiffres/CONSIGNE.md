@@ -6,7 +6,7 @@
 
 ## Ce qu'on fait
 
-Deux groupes, A et B, deux tâches de six minutes chacune, dans `depart/`.
+Deux groupes, A et B, deux tâches de cinq minutes chacune, dans `depart/`. Le dossier est la page de l'exercice 10, sans serveur ni base : les deux tâches ne dépendent de rien d'autre que du HTML et du CSS.
 
 | | Tâche 1 : `tache-1-evenements.md` (section Événements du mois, trois cartes) | Tâche 2 : `tache-2-reservation.md` (formulaire de réservation) |
 |---|---|---|
@@ -15,9 +15,9 @@ Deux groupes, A et B, deux tâches de six minutes chacune, dans `depart/`.
 
 Couper la complétion : icône Copilot dans la barre d'état en bas à droite, « Désactiver les complétions ». La remettre à l'inverse.
 
-Au bout de six minutes, chacun remplit sa ligne dans `feuille-de-releve.md` : fait ou pas, page valide ou pas (F12, console sans erreur, section visible), nombre de lignes écrites. Le formateur compile au tableau avec les chronos de la journée (E2, E8, E15).
+Au bout de cinq minutes, chacun remplit sa ligne dans `feuille-de-releve.md` : fait ou pas, page valide ou pas (F12, console sans erreur, section visible), nombre de lignes écrites. Le formateur compile au tableau avec les chronos de la journée (E2, E8, E15).
 
-Puis cinq minutes : chacun relit son historique de la journée (panneau Copilot Chat, sessions Claude Code) et note ses trois meilleurs prompts dans `PROMPTS.md`, avec ce qui les a rendus efficaces.
+Puis quatre minutes : chacun relit son historique de la journée (panneau Copilot Chat, sessions Claude Code) et note ses trois meilleurs prompts dans `PROMPTS.md`, avec ce qui les a rendus efficaces.
 
 ## Livrable
 
