@@ -1,0 +1,25 @@
+{
+  // Réglages VS Code propres à ce dépôt. Ils voyagent avec lui : même éditeur
+  // pour toute personne qui ouvre ce dossier, sur son poste ou dans la machine
+  // virtuelle de la formation.
+
+  // Fins de ligne et encodage : les fichiers sont en LF et en UTF-8, comme git
+  // et le serveur les attendent. Sans ce réglage, Windows crée les nouveaux
+  // fichiers en CRLF et git signale des différences sur chaque ligne.
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+
+  // Les textes se lisent sans défilement horizontal.
+  "[html]": { "editor.wordWrap": "on" },
+  "[markdown]": { "editor.wordWrap": "on" },
+
+  // Python : si un environnement virtuel .venv existe (exercice 15), VS Code
+  // l'active de lui-même dans chaque nouveau terminal.
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.terminal.activateEnvironment": true,
+
+  "search.exclude": {
+    "**/.venv": true
+  }
+}

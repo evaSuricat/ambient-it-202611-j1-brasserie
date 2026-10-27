@@ -1,0 +1,80 @@
+/* Le Pigala : page générée en un prompt (exercice 2). Couleurs de l'enseigne. */
+:root {
+  --orange: #F26B1D;
+  --bleu: #1D2A44;
+  --creme: #FFF6E9;
+  --vert: #5C8A3A;
+  --texte: #1D2A44;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--texte);
+  background: var(--creme);
+  line-height: 1.5;
+}
+
+h1, h2, h3, .logo, .bouton, nav {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.entete {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--bleu);
+  color: var(--creme);
+}
+.logo { margin: 0; font-weight: 700; font-size: 1.4rem; }
+.entete nav { display: flex; gap: 1rem; margin-left: auto; }
+.entete nav a { color: var(--creme); text-decoration: none; }
+.entete nav a:hover, .entete nav a:focus { text-decoration: underline; }
+
+.bouton {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.bouton:hover, .bouton:focus { background: #c9540f; }
+.lien { margin-left: 1rem; color: var(--bleu); font-weight: 700; }
+
+main > section { padding: 2.5rem 1.5rem; max-width: 960px; margin: 0 auto; }
+
+.heros h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+.accroche { font-size: 1.2rem; max-width: 40rem; }
+
+.esprit { background: #fff; max-width: none; }
+.esprit > * { max-width: 960px; margin-left: auto; margin-right: auto; }
+
+.colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+.carte ul { list-style: none; padding: 0; margin: 0; }
+.carte li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px dotted var(--bleu); }
+.carte li span { white-space: nowrap; font-weight: 700; }
+.encadre { margin-top: 1.5rem; padding: 1rem; background: var(--vert); color: #fff; border-radius: 8px; }
+
+.horaires ul { padding-left: 1.2rem; }
+
+address { font-style: normal; }
+address a { color: var(--bleu); }
+
+footer { padding: 1.5rem; background: var(--bleu); color: var(--creme); text-align: center; font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+  .entete { flex-wrap: wrap; }
+  .entete nav { margin-left: 0; width: 100%; }
+  .heros h1 { font-size: 1.7rem; }
+}
+
+/* Section horaires, ajoutée à l'exercice 4 */
+.horaires table { border-collapse: collapse; margin-bottom: 1.5rem; min-width: 18rem; }
+.horaires caption { text-align: left; font-weight: 700; padding-bottom: 0.5rem; }
+.horaires th, .horaires td { text-align: left; padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px dotted var(--bleu); }
+.soirees { list-style: none; padding: 0; display: grid; gap: 0.5rem; }

@@ -1,0 +1,15 @@
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Outils de l'éditeur et des agents
+.playwright-mcp/
+
+# Rapports régénérés
+rapports/
