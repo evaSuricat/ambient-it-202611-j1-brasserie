@@ -40,4 +40,4 @@ Le script a été testé le 28/10/2026 dans un conteneur Docker `ubuntu:24.04` v
 | Claude Code | 2.1.312 |
 | Extensions | Python 2026.10.0 (avec Pylance, Debugger et Python Environments), SonarQube for IDE 6.2.0, Claude Code 2.1.312 |
 
-Le clone du dépôt échoue tant qu'il est privé : le script le signale et continue. Rendre le dépôt public avant de construire la VM modèle, ou y copier le zip du dépôt.
+Le dépôt est public depuis le 28/10/2026 : le clone passe sans compte. Si le réseau le bloque, le script le signale et continue ; copier alors le zip du dépôt dans `~/ambient-it-j1`.
