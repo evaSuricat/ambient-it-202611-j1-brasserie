@@ -40,8 +40,8 @@ Chaque exercice a un dossier `depart/` qui contient tout ce qu'il faut pour le f
 
 ## Les branches
 
-- `main` : les dossiers `depart/` seuls. On y travaille dans sa branche.
-- `solution` : les mêmes exercices avec leur dossier `solution/`, un résultat possible, pas le seul.
+- `main` : les dossiers `depart/` seuls. On y travaille dans sa branche, au prénom.
+- Les solutions (un résultat possible, pas le seul) vivent dans un dépôt privé à part, `ambient-it-202611-j1-brasserie-solutions`, montré par la formatrice à la correction.
 
 ## Le serveur local
 
