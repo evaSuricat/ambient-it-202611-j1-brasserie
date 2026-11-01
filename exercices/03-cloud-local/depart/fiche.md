@@ -20,6 +20,8 @@ Réponds en une ou deux lignes. Les réponses se trouvent dans l'interface, pas 
 
 4. Dans Copilot Chat, quel menu permet de changer de modèle ? Cite deux modèles proposés et leur éditeur.
 
+   Choisis-en un, envoie un prompt : quel modèle a vraiment répondu (pied de la réponse) ?
+
    Réponse :
 
 ## Les données : où vont-elles ?
