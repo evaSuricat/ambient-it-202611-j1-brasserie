@@ -19,6 +19,14 @@ Claude Code appelait autrefois cela une « commande » (`.claude/commands/`) : l
 
 La page de l'exercice est dans `exercices/05-commande-a-moi/depart/`. Le skill se crée à la RACINE de votre dossier, à côté de `AGENTS.md`. Rangé dans `depart/`, il serait invisible.
 
+0. **Reprendre votre page.** Si l'exercice 4 a abouti, copiez la page qu'il a produite (celle de Claude Code, avec son plan d'accès) dans `exercices/05-commande-a-moi/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/04-regles-du-projet/depart/index.html exercices/05-commande-a-moi/depart/
+       cp exercices/04-regles-du-projet/depart/style.css exercices/05-commande-a-moi/depart/
+       cp exercices/04-regles-du-projet/depart/css/* exercices/05-commande-a-moi/depart/css/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/05-commande-a-moi/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) sur la troisième ligne veut dire que l'exercice 4 n'a pas créé de dossier `css/` (la règle 2 n'a pas été appliquée) : reprenez alors la page fournie avec `git restore exercices/05-commande-a-moi/depart`, qui remet les fichiers fournis dans ce dossier et ne touche à rien d'autre. Sur les deux premières lignes, l'erreur veut dire que vous n'êtes pas à la racine (`pwd`) : rien n'a été écrit.
+
 1. **Créer le fichier.** Dans l'explorateur de VS Code, cliquez d'abord dans le vide sous la liste des fichiers (aucun dossier sélectionné), puis sur l'icône « New File », et tapez ce nom tel quel :
 
        .claude/skills/verifier-page/SKILL.md

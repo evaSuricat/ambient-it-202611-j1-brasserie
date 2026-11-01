@@ -8,6 +8,14 @@
 
 `depart/` contient la page et ses règles (`AGENTS.md` est à la racine). Git est le filet : on commite avant chaque essai, on revient après.
 
+0. **Reprendre votre page.** Si l'exercice 5 a abouti, copiez votre page dans `exercices/06-casse-ta-page/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/05-commande-a-moi/depart/index.html exercices/06-casse-ta-page/depart/
+       cp exercices/05-commande-a-moi/depart/style.css exercices/06-casse-ta-page/depart/
+       cp exercices/05-commande-a-moi/depart/css/* exercices/06-casse-ta-page/depart/css/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/06-casse-ta-page/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
+
 1. Dans le terminal VS Code, qui s'ouvre à la racine de votre dossier, placez-vous d'abord dans le dossier de l'exercice :
 
        cd exercices/06-casse-ta-page/depart

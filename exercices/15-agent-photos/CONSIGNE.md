@@ -8,6 +8,18 @@
 
 `exercices/15-agent-photos/depart/photos/` contient huit images de 1600 pixels de large. La page les attend à deux endroits (« Photo de la façade, à venir », « Photo de la terrasse, à venir ») et peut en montrer d'autres dans l'esprit du lieu. Tâche répétitive : trois tailles par image, les balises, les textes alternatifs.
 
+0. **Reprendre votre page.** Si l'exercice 14 a abouti, copiez votre page dans `exercices/15-agent-photos/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. L'exercice 14 ne modifie pas la page : si vous y avez fait la copie de l'exercice 13, c'est elle que vous reprenez. Ne copiez pas `photos/` : ce sont les images fournies de cet exercice. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/14-ou-est-la-couleur/depart/index.html exercices/15-agent-photos/depart/
+       cp exercices/14-ou-est-la-couleur/depart/style.css exercices/15-agent-photos/depart/
+       cp exercices/14-ou-est-la-couleur/depart/css/* exercices/15-agent-photos/depart/css/
+       cp exercices/14-ou-est-la-couleur/depart/script.js exercices/15-agent-photos/depart/
+       cp exercices/14-ou-est-la-couleur/depart/servir.py exercices/15-agent-photos/depart/
+       cp exercices/14-ou-est-la-couleur/depart/charger.py exercices/15-agent-photos/depart/
+       cp exercices/14-ou-est-la-couleur/depart/carte.db exercices/15-agent-photos/depart/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/15-agent-photos/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
+
 1. Chrono. Un seul prompt à Claude Code. Il crée l'environnement virtuel `.venv` à la **racine** du dépôt, là où VS Code le retrouve tout seul :
 
    > Dans exercices/15-agent-photos/depart/photos/, huit images. Écris exercices/15-agent-photos/depart/redimensionner.py qui produit pour chacune trois largeurs (480, 960, 1600) dans exercices/15-agent-photos/depart/photos/petit, exercices/15-agent-photos/depart/photos/moyen et exercices/15-agent-photos/depart/photos/grand, en JPEG qualité 85, puis lance-le. Ensuite remplace les deux blocs « photo à venir » de exercices/15-agent-photos/depart/index.html par des images responsives (srcset et sizes) avec un texte alternatif qui décrit l'image, et ajoute une galerie de quatre photos dans la section « L'esprit du lieu ». Propose ensuite un message de commit. Si tu as besoin d'une bibliothèque, crée un environnement virtuel .venv à la racine du dépôt (pas dans depart/) et installe-la dedans, avec un requirements.txt à côté de redimensionner.py.

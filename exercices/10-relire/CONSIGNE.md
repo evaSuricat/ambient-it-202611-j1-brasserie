@@ -8,15 +8,23 @@
 
 `exercices/10-relire/depart/` contient la page complète avec sa carte. On la relit avec la grille de l'exercice 5, on corrige, on mesure.
 
-0. La commande `/verifier-page` vient de l'exercice 5 : c'est le skill `.claude/skills/verifier-page/SKILL.md`, à la racine de votre dossier, lu par Claude Code et par Copilot. Si vous ne l'avez pas, copiez le dossier `ressources/skills/verifier-page` dans `.claude/skills/` à la racine (créez `.claude/skills/` s'il n'existe pas : clic droit dans l'explorateur, « New Folder »). Puis ouvrez une nouvelle conversation dans chaque outil.
-1. Dans Claude Code, avec les chemins de la page :
+0. **Reprendre votre page.** Si l'exercice 9 a abouti, copiez votre page dans `exercices/10-relire/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/09-snippets-carte/depart/index.html exercices/10-relire/depart/
+       cp exercices/09-snippets-carte/depart/style.css exercices/10-relire/depart/
+       cp exercices/09-snippets-carte/depart/css/* exercices/10-relire/depart/css/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/10-relire/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
+
+1. La commande `/verifier-page` vient de l'exercice 5 : c'est le skill `.claude/skills/verifier-page/SKILL.md`, à la racine de votre dossier, lu par Claude Code et par Copilot. Si vous ne l'avez pas, copiez le dossier `ressources/skills/verifier-page` dans `.claude/skills/` à la racine (créez `.claude/skills/` s'il n'existe pas : clic droit dans l'explorateur, « New Folder »). Puis ouvrez une nouvelle conversation dans chaque outil.
+2. Dans Claude Code, avec les chemins de la page :
 
        /verifier-page exercices/10-relire/depart/index.html exercices/10-relire/depart/style.css
 
    Lire le rapport. Dans Copilot Chat (New Chat, sélecteur sur Agent) : `/verifier-page` suivi des deux mêmes chemins. Comparer.
-2. Appliquer au moins deux corrections de la liste « À corriger », à la main ou en demandant à l'outil. Nommez le point, pas le numéro, car la numérotation change d'un rapport à l'autre : « Dans exercices/10-relire/depart/, applique les corrections du rapport sur le contraste du bouton et de l'encadré. »
-3. Mesurer avant et après avec Lighthouse : ouvrir `exercices/10-relire/depart/index.html` dans Chrome, F12, onglet « Lighthouse », cocher Accessibilité et Bonnes pratiques, mode Ordinateur, « Analyser ». Créer `exercices/10-relire/depart/lighthouse.md` et y noter les deux scores.
-4. Committer. Placez-vous dans le dossier de l'exercice, contrôlez, puis committez :
+3. Appliquer au moins deux corrections de la liste « À corriger », à la main ou en demandant à l'outil. Nommez le point, pas le numéro, car la numérotation change d'un rapport à l'autre : « Dans exercices/10-relire/depart/, applique les corrections du rapport sur le contraste du bouton et de l'encadré. »
+4. Mesurer avant et après avec Lighthouse : ouvrir `exercices/10-relire/depart/index.html` dans Chrome, F12, onglet « Lighthouse », cocher Accessibilité et Bonnes pratiques, mode Ordinateur, « Analyser ». Créer `exercices/10-relire/depart/lighthouse.md` et y noter les deux scores.
+5. Committer. Placez-vous dans le dossier de l'exercice, contrôlez, puis committez :
 
        cd exercices/10-relire/depart
        pwd

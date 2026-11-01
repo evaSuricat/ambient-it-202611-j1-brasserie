@@ -8,6 +8,14 @@
 
 `depart/` contient la page relue et `carte.csv`. Vous travaillez à la racine du dépôt dans VS Code, et chaque commande de cet exercice se lance depuis `exercices/11-carte-en-base/depart`. La carte, aujourd'hui écrite dans le HTML, va vivre dans une base SQLite servie par Python. SQLite est inclus dans Python : rien à installer.
 
+0. **Reprendre votre page.** Si l'exercice 10 a abouti, copiez votre page dans `exercices/11-carte-en-base/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. Seule la page se copie (HTML, feuille de style et dossier `css/`) : le script et le serveur sont à écrire dans cet exercice. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/10-relire/depart/index.html exercices/11-carte-en-base/depart/
+       cp exercices/10-relire/depart/style.css exercices/11-carte-en-base/depart/
+       cp exercices/10-relire/depart/css/* exercices/11-carte-en-base/depart/css/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/11-carte-en-base/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
+
 1. Dans le terminal, placez-vous dans le dossier de l'exercice, puis vérifiez où vous êtes :
 
        cd exercices/11-carte-en-base/depart

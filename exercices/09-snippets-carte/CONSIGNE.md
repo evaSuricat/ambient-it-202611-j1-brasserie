@@ -8,6 +8,14 @@
 
 `exercices/09-snippets-carte/depart/` contient la page avec sa section carte vide. Cette fois, pas d'agent : la complétion Copilot, ligne à ligne, dans l'éditeur. `carte.md`, dans le dossier, donne les noms et les prix ; l'ouvrir dans un onglet à côté, Copilot s'en sert comme contexte.
 
+0. **Reprendre votre page.** Si l'exercice 8 a abouti, copiez votre page dans `exercices/09-snippets-carte/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/08-maquette-vers-page/depart/index.html exercices/09-snippets-carte/depart/
+       cp exercices/08-maquette-vers-page/depart/style.css exercices/09-snippets-carte/depart/
+       cp exercices/08-maquette-vers-page/depart/css/* exercices/09-snippets-carte/depart/css/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/09-snippets-carte/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
+
 1. Ouvrir `exercices/09-snippets-carte/depart/index.html` et `exercices/09-snippets-carte/depart/carte.md` dans deux onglets. Dans `index.html`, dans la section carte, supprimer la phrase « La carte arrive. » et taper un commentaire :
 
        <!-- Deux colonnes : Bières et cidre, À manger. Chaque colonne : h3, puis une liste ul ; chaque li : nom, description, prix dans un span -->

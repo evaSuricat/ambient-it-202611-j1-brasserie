@@ -64,7 +64,8 @@ Le brief dit ce que veut le client. Les règles du projet disent comment l'équi
 
 6. **Avec règles**, le même prompt : « Ajoute un plan d'accès dans la section Venir. »
    - dans Copilot : New Chat, **remettre Agent**, puis envoyez. Il lit `AGENTS.md` de lui-même (« Read AGENTS.md » dans son journal) ;
-   - puis dans Claude Code : nouvelle session (bouton +), mode Manual. Il demande l'autorisation avant chaque écriture.
+   - puis revenez à votre page d'E2 : refaites les deux `cp` de l'étape 1 et supprimez le dossier `css/` de `depart/` s'il a été créé ;
+   - enfin dans Claude Code : nouvelle session (bouton +), mode Manual. Il demande l'autorisation avant chaque écriture. **Ce résultat reste dans `depart/` : c'est votre page pour la suite de la journée, ne l'effacez pas.**
 
 7. **Vérifier**, pour chaque outil :
    - le lien « Ouvrir le plan dans OpenStreetMap » est visible dans la page (règle 1) ;
@@ -78,7 +79,7 @@ Si Copilot répond qu'il est en « lecture seule », il est en Ask : cliquez sur
 
 ## Livrable
 
-`AGENTS.md` à la racine de `stagiaire_J1`, et le plan d'accès dans la section Venir de `index.html`, avec son lien OpenStreetMap, sa feuille dans `css/` et ses commentaires DÉBUT et FIN.
+`AGENTS.md` à la racine de `stagiaire_J1`, et le plan d'accès dans la section Venir de `index.html`, avec son lien OpenStreetMap, sa feuille dans `css/` et ses commentaires DÉBUT et FIN. Cette page, celle que Claude Code a produite, est votre point de départ pour l'exercice 5.
 
 ## Piège à observer
 

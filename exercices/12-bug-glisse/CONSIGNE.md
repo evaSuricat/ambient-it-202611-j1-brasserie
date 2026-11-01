@@ -8,6 +8,27 @@
 
 `depart/` contient la page de l'exercice 11, mais la carte ne s'affiche plus. Deux bugs, pas un. Chaque commande de cet exercice se lance depuis `exercices/12-bug-glisse/depart`.
 
+0. **Choisir votre page.** Deux chemins.
+
+   **(a) Par défaut : gardez le `depart/` fourni.** C'est le scénario prévu : la page est déjà cassée, et vous n'avez rien à copier. Passez à l'étape 1.
+
+   **(b) Fil rouge : cassez votre propre page.** Si l'exercice 11 a abouti et que vous voulez garder votre page, copiez-la dans `exercices/12-bug-glisse/depart/`, puis posez vous-même les deux bugs. Les lignes `cp` se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/11-carte-en-base/depart/index.html exercices/12-bug-glisse/depart/
+       cp exercices/11-carte-en-base/depart/style.css exercices/12-bug-glisse/depart/
+       cp exercices/11-carte-en-base/depart/css/* exercices/12-bug-glisse/depart/css/
+       cp exercices/11-carte-en-base/depart/script.js exercices/12-bug-glisse/depart/
+       cp exercices/11-carte-en-base/depart/servir.py exercices/12-bug-glisse/depart/
+       cp exercices/11-carte-en-base/depart/charger.py exercices/12-bug-glisse/depart/
+       cp exercices/11-carte-en-base/depart/carte.db exercices/12-bug-glisse/depart/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/12-bug-glisse/depart/` (pas de `css/css/`). Puis les deux bugs, dans les fichiers copiés :
+
+   - dans `script.js`, à la ligne `const reponse = await fetch("/api/carte");`, ajoutez un `s` : `"/api/cartes"` ;
+   - dans `index.html`, section « La carte », supprimez la ligne `</div>` qui ferme la colonne « À manger », celle qui suit `<ul data-categorie="plat"></ul>` et précède `<noscript>` ; la colonne « Bières et cidre » garde le sien. Si le balisage de votre page est autre, supprimez la fermeture de la dernière colonne de la carte.
+
+   Enregistrez les deux fichiers (Ctrl+S) avant de continuer. Le reste de l'exercice est le même : la carte est vide, le Happy hour passe à droite. À l'exercice 13, vous reprendrez la page réparée de l'exercice 12, la vôtre ou celle du `depart/`.
+
 1. Dans le terminal, placez-vous dans le dossier de l'exercice et vérifiez où vous êtes :
 
        cd exercices/12-bug-glisse/depart

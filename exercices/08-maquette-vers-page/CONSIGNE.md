@@ -8,6 +8,14 @@
 
 `exercices/08-maquette-vers-page/depart/` contient la page des exercices précédents, `brief.md`, et `maquette.png` (celle de l'exercice 7, ou la maquette fournie). On fait refaire la page pour qu'elle suive la maquette, section par section.
 
+0. **Reprendre votre page.** Si l'exercice 6 a abouti, copiez votre page dans `exercices/08-maquette-vers-page/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. L'exercice 7 ne produit qu'une maquette (une image) : la page vient de l'exercice 6, et `maquette.png` reste celui de `depart/`. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+       cp exercices/06-casse-ta-page/depart/index.html exercices/08-maquette-vers-page/depart/
+       cp exercices/06-casse-ta-page/depart/style.css exercices/08-maquette-vers-page/depart/
+       cp exercices/06-casse-ta-page/depart/css/* exercices/08-maquette-vers-page/depart/css/
+
+   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/08-maquette-vers-page/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
+
 1. Chrono.
 2. Dans Claude Code, glisser `maquette.png` dans le champ (ou Ctrl+V après l'avoir copiée). Si l'image ne passe pas, écrivez son chemin dans le prompt (`exercices/08-maquette-vers-page/depart/maquette.png`). Puis :
 
