@@ -8,16 +8,19 @@ Le fil rouge : une brasserie-restaurant de Montreuil, fictive, qui veut une seul
 
 Prérequis : VS Code avec les extensions GitHub Copilot et Claude Code connectées, Git, Python 3.12, Google Chrome.
 
-1. Cloner ce dépôt et l'ouvrir dans VS Code (Fichier, Ouvrir le dossier).
+1. Créer un dossier `stagiaire_J1`, l'ouvrir dans VS Code (Fichier, Ouvrir le dossier, puis « Yes, I trust the authors »), et y cloner ce dépôt depuis un terminal de VS Code, sans oublier le point final :
+
+       git clone https://github.com/evaSuricat/ambient-it-202611-j1-brasserie.git .
+
 2. Créer sa branche de travail, une par personne, depuis un terminal de VS Code :
 
        git switch -c prenom
 
-3. Lire le `CONSIGNE.md` de l'exercice en cours dans `exercices/`, puis **ouvrir son dossier `depart/` comme dossier de travail** : Fichier, Ouvrir le dossier, choisir `exercices/NN-nom/depart`. Les assistants lisent leurs fichiers d'instructions et leurs commandes à la racine du dossier ouvert, pas plus haut. Claude Code en terminal se lance depuis ce même dossier.
+3. Garder la racine de `stagiaire_J1` ouverte toute la journée : c'est là que les assistants lisent `AGENTS.md` (écrit à l'exercice 4) et le skill `/verifier-page` (écrit à l'exercice 5). Pour chaque exercice, lire son `CONSIGNE.md` dans `exercices/NN-nom/`. Les prompts nomment le dossier de l'exercice (« Dans exercices/NN-nom/depart/, … »), et les commandes du terminal se lancent depuis la racine, sauf quand la consigne dit de faire `cd` dans `depart/`.
 
-## Les exercices sont indépendants
+## Une seule page, d'exercice en exercice
 
-Chaque exercice a un dossier `depart/` qui contient tout ce qu'il faut pour le faire, même si l'exercice précédent n'a pas été fini : le `depart/` d'un exercice est la solution du précédent. Celui qui est en avance continue dans son propre dossier, celui qui a décroché repart propre.
+Chaque exercice reprend votre page de l'exercice précédent : l'étape « Reprendre votre page » de la consigne la recopie dans le `depart/` de l'exercice. En fin de journée, votre page porte tout ce que vous avez fait. Si un exercice n'a pas abouti, gardez le `depart/` fourni : c'est la solution de l'exercice précédent, vous repartez propre. Deux exceptions : l'exercice 12 part par défaut de la page fournie, qui contient un bug posé exprès, et l'exercice 16 repart de la page de l'exercice 10.
 
 | Exercice | Point du programme |
 |---|---|
@@ -25,7 +28,7 @@ Chaque exercice a un dossier `depart/` qui contient tout ce qu'il faut pour le f
 | 02 Une page en un prompt | Vibe coding, chronométré |
 | 03 Cloud ou local ? | Où tournent l'agent et le modèle, où vont les données |
 | 04 Les règles du projet | Personnaliser son IDE : fichiers d'instructions |
-| 05 Une commande à moi | Personnaliser son IDE : commandes et fichiers de prompt |
+| 05 Une commande à moi | Personnaliser son IDE : commandes et skills |
 | 06 Casse ta page | Apprendre par l'expérimentation, git comme filet |
 | 07 La maquette en dix minutes | Création d'UI avec un outil IA |
 | 08 De la maquette à la page | Coder une petite application en vibe coding |
