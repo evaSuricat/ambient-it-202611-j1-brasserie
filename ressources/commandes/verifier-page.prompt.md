@@ -1,4 +1,8 @@
-Relis la page $ARGUMENTS (par défaut index.html et style.css) selon la grille ci-dessous. Ne modifie rien : tu rends un rapport.
+---
+agent: ask
+description: Relire la page selon la grille d'accessibilité du projet
+---
+Relis les fichiers dont je te donne le chemin complet depuis la racine après la commande (par exemple exercices/05-commande-a-moi/depart/index.html et exercices/05-commande-a-moi/depart/style.css), selon la grille ci-dessous. Si aucun fichier n’est donné, demande-moi les chemins de index.html et style.css. Ne modifie rien : tu rends un rapport.
 
 Grille :
 1. Structure : HTML sémantique (header, nav, main, section, footer), un seul h1, titres sans saut de niveau, chaque section reliée à son titre par aria-labelledby.

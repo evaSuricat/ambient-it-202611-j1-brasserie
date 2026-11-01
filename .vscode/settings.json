@@ -14,9 +14,9 @@
   "[html]": { "editor.wordWrap": "on" },
   "[markdown]": { "editor.wordWrap": "on" },
 
-  // Python : si un environnement virtuel .venv existe (exercice 15), VS Code
+  // Python : VS Code trouve seul un environnement virtuel .venv situé à la
+  // racine du dossier ouvert (exercice 15), sous Windows comme sous Linux, et
   // l'active de lui-même dans chaque nouveau terminal.
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
   "python.terminal.activateEnvironment": true,
 
   "search.exclude": {

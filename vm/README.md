@@ -14,7 +14,7 @@ Sur la VM modèle, en root :
 
     sudo bash installer-vm.sh stagiaire
 
-Le script installe git, Python 3.12 (natif sur 24.04) avec `venv` et `pip`, VS Code et trois extensions (Python, SonarQube for IDE, Claude Code), Google Chrome (Lighthouse est intégré à F12), Claude Code par son installateur natif (sans Node), et clone le dépôt des exercices dans `~/ambient-it-j1`. Il affiche les versions obtenues à la fin. Rien d'autre : pas d'Ollama, pas de Docker.
+Le script installe git, Python 3.12 (natif sur 24.04) avec `venv` et `pip`, le paquet `python-is-python3` (il donne la commande `python`, comme sous Windows : les consignes écrivent `python`, jamais `python3`), VS Code et trois extensions (Python, SonarQube for IDE, Claude Code), Google Chrome (Lighthouse est intégré à F12), Claude Code par son installateur natif (sans Node), et clone le dépôt des exercices dans `~/ambient-it-j1`. Il affiche les versions obtenues à la fin. Rien d'autre : pas d'Ollama, pas de Docker.
 
 Les comptes se connectent le jour J, par le stagiaire lui-même : GitHub dans VS Code pour Copilot (un compte gratuit suffit), Anthropic pour Claude Code (abonnement Pro ou clé API, à régler avant la session).
 
@@ -22,9 +22,9 @@ Les comptes se connectent le jour J, par le stagiaire lui-même : GitHub dans VS
 
 Après l'installation, dans un terminal de la VM :
 
-    python3 --version && git --version && code --version | head -1 && google-chrome --version && claude --version
+    python --version && python3 --version && git --version && code --version | head -1 && google-chrome --version && claude --version
 
-Puis ouvrir VS Code sur `~/ambient-it-j1/exercices/01-trois-outils/depart` (Fichier, Ouvrir le dossier).
+Puis ouvrir VS Code sur la racine du dépôt, `~/ambient-it-j1` (Fichier, Ouvrir le dossier). Le terminal s'ouvre alors à la racine, là où `AGENTS.md` est lu.
 
 ## Test du script
 
@@ -39,5 +39,7 @@ Le script a été testé le 28/10/2026 dans un conteneur Docker `ubuntu:24.04` v
 | Google Chrome | 156.0.8078.73 |
 | Claude Code | 2.1.312 |
 | Extensions | Python 2026.10.0 (avec Pylance, Debugger et Python Environments), SonarQube for IDE 6.2.0, Claude Code 2.1.312 |
+
+Le paquet `python-is-python3` a été ajouté après ce test : il n'a pas encore été rejoué dans le conteneur (à vérifier avec `python --version` après installation).
 
 Le dépôt est public depuis le 28/10/2026 : le clone passe sans compte. Si le réseau le bloque, le script le signale et continue ; copier alors le zip du dépôt dans `~/ambient-it-j1`.

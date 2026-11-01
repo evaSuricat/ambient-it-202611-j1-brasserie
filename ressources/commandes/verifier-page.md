@@ -1,4 +1,4 @@
-Relis la page $ARGUMENTS (par défaut index.html et style.css) selon la grille ci-dessous. Ne modifie rien : tu rends un rapport.
+Relis les fichiers $ARGUMENTS selon la grille ci-dessous (chemins complets depuis la racine, par exemple exercices/05-commande-a-moi/depart/index.html exercices/05-commande-a-moi/depart/style.css). Si aucun fichier n’est donné, demande-moi les chemins de index.html et style.css. Ne modifie rien : tu rends un rapport.
 
 Grille :
 1. Structure : HTML sémantique (header, nav, main, section, footer), un seul h1, titres sans saut de niveau, chaque section reliée à son titre par aria-labelledby.

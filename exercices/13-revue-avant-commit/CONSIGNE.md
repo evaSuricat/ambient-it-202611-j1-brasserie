@@ -6,12 +6,28 @@
 
 ## Ce qu'on fait
 
-`depart/` contient la page réparée et `A-FAIRE.md`, une demande d'évolution : une section « Ils en parlent » avec trois avis clients (fictifs, dans `A-FAIRE.md`). On la fait écrire, on la fait relire **avant** de committer, on génère le message de commit.
+`depart/` contient la page réparée et `A-FAIRE.md`, une demande d'évolution : une section « Ils en parlent » avec trois avis clients (fictifs, dans `A-FAIRE.md`). On la fait écrire, on la fait relire **avant** de committer, on génère le message de commit. Les fichiers de l'exercice sont dans `exercices/13-revue-avant-commit/depart/`.
 
-1. Dans Claude Code : « Fais ce que demande A-FAIRE.md ». Vérifier dans Chrome.
-2. Ne pas committer. Dans `index.html`, sélectionner toute la nouvelle section, clic droit, **Copilot**, **Review and Comment**. Les remarques apparaissent dans l'éditeur et dans l'onglet Commentaires. Ça marche avec l'offre Copilot Free.
-3. Corriger ce qui mérite de l'être, à la main ou en le demandant à l'outil. Ignorer le reste en le disant pourquoi.
-4. Dans la vue Source Control (Ctrl+Maj+G), tout ajouter, puis cliquer l'icône étincelle à droite du champ de message : Copilot écrit le message de commit. Le relire, le corriger s'il décrit mal, committer.
+0. Dans le terminal, à la racine du dépôt, vérifiez que votre dépôt est propre :
+
+       git status
+
+   Résultat attendu : `nothing to commit, working tree clean`. Si des fichiers des exercices précédents apparaissent modifiés, committez-les d'abord (`git add -A` puis `git commit -m "Fin des exercices précédents"`), sinon la relecture portera aussi sur eux et pas seulement sur la nouvelle section. Rien n'est perdu : un commit se défait.
+1. Dans Claude Code :
+
+   > Dans exercices/13-revue-avant-commit/depart/, fais ce que demande A-FAIRE.md.
+
+   Ouvrez `A-FAIRE.md` ou `index.html` avant, pour que l'outil sache de quel dossier on parle. Lisez ce qu'il a écrit : les trois avis doivent être recopiés mot pour mot, sans étoile ni superlatif ajouté.
+2. Vérifier dans Chrome. La page lit la carte dans la base : lancez le serveur dans un **deuxième terminal** (bouton **+** du panneau Terminal).
+
+       cd exercices/13-revue-avant-commit/depart
+       pwd
+       python servir.py
+
+   Résultat attendu : `pwd` affiche un chemin qui se termine par `exercices/13-revue-avant-commit/depart`, puis le serveur affiche une adresse et reste en attente (`Ctrl+C` l'arrête). Ouvrez http://127.0.0.1:8000/. Si vous ouvrez `index.html` par double-clic, la console affiche une erreur 404 sur `/api/carte` : c'est normal sans le serveur.
+3. Ne pas committer. Dans `index.html`, sélectionner toute la nouvelle section, clic droit, menu **Copilot**, **Generate Code**, **Review** (libellés de la documentation GitHub ; si vous ne les voyez pas, cherchez une entrée de revue dans ce menu et dites-moi son nom). Les remarques apparaissent dans l'éditeur et dans le panneau Comments. Autre chemin, sans sélection : dans la vue Source Control (Ctrl+Maj+G), survoler « CHANGES » fait apparaître le bouton « Copilot Code Review - Uncommitted Changes ».
+4. Corriger ce qui mérite de l'être, à la main ou en le demandant à l'outil. Ignorer le reste en le disant pourquoi.
+5. Dans la vue Source Control (Ctrl+Maj+G), tout ajouter, puis cliquer l'icône étincelle à droite du champ de message : Copilot écrit le message de commit. Le relire, le corriger s'il décrit mal, committer.
 
 ## Livrable
 
@@ -20,5 +36,5 @@ Un commit dont le message a été généré, après revue. `message-de-commit.md
 ## Ce qu'on retient
 
 - Dans VS Code, Copilot ne relit que ce qui n'est pas encore commité (ou une sélection). Pour relire une pull request entière, c'est la page GitHub, « Reviewers », Copilot, en offre Pro ou en organisation.
-- Claude Code a ses propres revues, `/code-review` et `/security-review`, sans Copilot.
+- Claude Code a ses propres revues, `/code-review` et `/security-review`, sans Copilot. Elles relisent tout ce qui n'est pas commité, donc le dépôt doit être propre sauf la section d'E13. `/code-review` répond en JSON brut, `/security-review` en anglais. Lisez les remarques, ne les acceptez pas en bloc.
 - Le message de commit généré décrit ce qui a changé ; c'est à vous d'y mettre pourquoi.

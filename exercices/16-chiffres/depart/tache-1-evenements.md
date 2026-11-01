@@ -1,6 +1,6 @@
 # Tâche 1 : la section « Événements du mois », cinq minutes
 
-Dans `index.html`, entre « Horaires et soirées » et « Venir », une section `evenements` avec un titre h2 « Événements du mois » et trois cartes. Dans `style.css`, trois cartes sur fond blanc, filet orange à gauche, comme les soirées. Lien « Événements » dans la navigation.
+Dans `exercices/16-chiffres/depart/index.html`, entre « Horaires et soirées » et « Venir », une section `evenements` avec un titre h2 « Événements du mois » et trois cartes. Styles dans une feuille `exercices/16-chiffres/depart/css/evenements.css` (nouveau fichier), reliée dans `index.html` par une balise `link` : trois cartes sur fond blanc, filet orange à gauche, comme les soirées. Lien « Événements » dans la navigation. Règles : celles d'`AGENTS.md`, à la racine du dépôt.
 
 | Événement | Quand | Une ligne |
 |---|---|---|

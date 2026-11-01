@@ -6,21 +6,24 @@
 
 ## Ce qu'on fait
 
-`depart/` contient la page des exercices précédents, ses règles, et `maquette.png` (celle de l'exercice 7, ou la maquette fournie). On fait refaire la page pour qu'elle suive la maquette, section par section.
+`exercices/08-maquette-vers-page/depart/` contient la page des exercices précédents, `brief.md`, et `maquette.png` (celle de l'exercice 7, ou la maquette fournie). On fait refaire la page pour qu'elle suive la maquette, section par section.
 
 1. Chrono.
-2. Dans Claude Code, glisser `maquette.png` dans le champ (ou Ctrl+V après l'avoir copiée), puis :
+2. Dans Claude Code, glisser `maquette.png` dans le champ (ou Ctrl+V après l'avoir copiée). Si l'image ne passe pas, écrivez son chemin dans le prompt (`exercices/08-maquette-vers-page/depart/maquette.png`). Puis :
 
-   > Voici la maquette de la page. Refais index.html et style.css pour la suivre, section par section, dans cet ordre : en-tête, héros, l'esprit du lieu, la carte, horaires et soirées, venir, pied de page. Les textes viennent de brief.md, les règles de CLAUDE.md. La carte reste vide pour l'instant : seulement son titre et une phrase « la carte arrive ». Les photos arriveront plus tard : prévois leur emplacement.
+   > Voici la maquette de la page (exercices/08-maquette-vers-page/depart/maquette.png). Refais index.html et style.css de ce dossier pour la suivre, section par section, dans cet ordre : en-tête, héros, l'esprit du lieu, la carte, horaires et soirées, venir, pied de page. Les textes viennent de brief.md, les règles d'AGENTS.md à la racine. La carte reste vide pour l'instant : seulement son titre et une phrase « la carte arrive ». Les photos arriveront plus tard : prévois leur emplacement.
 
 3. Regarder dans Chrome, à côté de la maquette. Une correction par écart, une à la fois.
-4. Chrono arrêté quand la page suit la maquette. Temps noté dans `chrono.md`.
+4. Chrono arrêté quand la page suit la maquette. Temps noté dans `exercices/08-maquette-vers-page/depart/chrono.md` (à créer).
 
 ## Livrable
 
-`index.html` et `style.css` fidèles à la maquette, `chrono.md`.
+`index.html` et `style.css` de `exercices/08-maquette-vers-page/depart/` fidèles à la maquette, `chrono.md`.
 
 ## Pièges
 
+- L'agent supprime des textes de l'ancienne page que le brief ne donne pas : c'est normal, à relire dans le diff.
+- Le pied de page de la maquette contient « Mentions légales » : le brief ne donne aucun contenu pour ça. Si l'agent invente une page, c'est de l'invention.
+
 - L'agent invente des textes quand le brief ne les donne pas : lui redonner le brief, pas lui demander d'être créatif.
-- Il ajoute parfois une police web « pour faire joli » : c'est la règle de `CLAUDE.md` qui doit l'en empêcher. Si elle n'a pas suffi, la préciser.
+- Il ajoute parfois une police web « pour faire joli » : c'est la règle d'`AGENTS.md` qui doit l'en empêcher. Si elle n'a pas suffi, la préciser.

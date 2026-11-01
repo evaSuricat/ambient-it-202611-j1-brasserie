@@ -6,18 +6,31 @@
 
 ## Ce qu'on fait
 
-`depart/` contient la page complète avec sa carte. On la relit avec la grille de l'exercice 5, on corrige, on mesure.
+`exercices/10-relire/depart/` contient la page complète avec sa carte. On la relit avec la grille de l'exercice 5, on corrige, on mesure.
 
-1. Dans Claude Code : `/verifier-page`. Lire le rapport. Dans Copilot Chat : `/verifier-page` ou « Chat: Run Prompt ». Comparer.
-2. Appliquer au moins deux corrections de la liste « À corriger », à la main ou en demandant à l'outil : « applique les corrections 1 et 3 du rapport ».
-3. Mesurer avant et après avec Lighthouse : ouvrir `index.html` dans Chrome, F12, onglet « Lighthouse », cocher Accessibilité et Bonnes pratiques, mode Ordinateur, « Analyser ». Noter les deux scores dans `lighthouse.md`.
-4. Committer :
+0. La commande `/verifier-page` vient de l'exercice 5 : ses deux fichiers sont à la racine de votre dossier (`.claude/commands/verifier-page.md` et `.github/prompts/verifier-page.prompt.md`). Si vous ne les avez pas, copiez-les depuis `ressources/commandes/` : `verifier-page.md` dans `.claude/commands/` et `verifier-page.prompt.md` dans `.github/prompts/` (créez les dossiers à la racine s'ils n'existent pas : clic droit dans l'explorateur, « Nouveau dossier »). Puis relancez la session Claude Code.
+1. Dans Claude Code, avec les chemins de la page :
 
-       git add -A && git commit -m "E10 : contraste des boutons et de l'encadré, focus visible"
+       /verifier-page exercices/10-relire/depart/index.html exercices/10-relire/depart/style.css
+
+   Lire le rapport. Dans Copilot Chat : `/verifier-page` suivi des deux mêmes chemins, ou « Chat: Run Prompt ». Comparer.
+2. Appliquer au moins deux corrections de la liste « À corriger », à la main ou en demandant à l'outil. Nommez le point, pas le numéro, car la numérotation change d'un rapport à l'autre : « Dans exercices/10-relire/depart/, applique les corrections du rapport sur le contraste du bouton et de l'encadré. »
+3. Mesurer avant et après avec Lighthouse : ouvrir `exercices/10-relire/depart/index.html` dans Chrome, F12, onglet « Lighthouse », cocher Accessibilité et Bonnes pratiques, mode Ordinateur, « Analyser ». Créer `exercices/10-relire/depart/lighthouse.md` et y noter les deux scores.
+4. Committer. Placez-vous dans le dossier de l'exercice, contrôlez, puis committez :
+
+       cd exercices/10-relire/depart
+       pwd
+       git add -A && git commit -m "E10 : contraste des boutons et de l'encadré"
+
+   `pwd` doit afficher un chemin qui finit par `10-relire/depart`. Résultat attendu du commit : une ligne « 1 file changed » ou plus. Revenir à la racine : `cd ../../..`.
 
 ## Livrable
 
-Deux corrections commitées, `lighthouse.md` avec les scores avant et après.
+Deux corrections commitées, `exercices/10-relire/depart/lighthouse.md` avec les scores avant et après.
+
+## Bon à savoir
+
+Après la correction du bouton, le survol (`#c9540f`, 4,4 pour 1) devient plus clair que le fond normal : c'est une correction de plus, à faire à la main (par exemple `#9A3E09`, 6,9 pour 1).
 
 ## Ce qu'on retient
 

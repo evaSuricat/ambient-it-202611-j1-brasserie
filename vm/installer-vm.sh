@@ -4,7 +4,7 @@
 # Lancer en root :   sudo bash installer-vm.sh [nom_utilisateur]
 # Le nom d'utilisateur est celui qui ouvrira VS Code (défaut : l'utilisateur qui a appelé sudo).
 #
-# Installe : git, Python 3.12 (natif sur 24.04) avec venv et pip, VS Code et trois extensions
+# Installe : git, Python 3.12 (natif sur 24.04) avec venv et pip et la commande `python` (paquet python-is-python3), VS Code et trois extensions
 # (Python, SonarQube for IDE, Claude Code), Google Chrome (Lighthouse est intégré à F12),
 # Claude Code (installateur natif, sans Node), et clone le dépôt des exercices.
 # Rien d'autre : pas d'Ollama, pas de Docker. Les comptes (GitHub pour Copilot, Anthropic pour
@@ -28,7 +28,7 @@ DEPOT="https://github.com/evaSuricat/ambient-it-202611-j1-brasserie.git"
 
 echo "== 1/6 Paquets système"
 apt-get update -q
-apt-get install -y -q git python3 python3-venv python3-pip curl wget ca-certificates gnupg apt-transport-https sudo
+apt-get install -y -q git python3 python-is-python3 python3-venv python3-pip curl wget ca-certificates gnupg apt-transport-https sudo
 
 echo "== 2/6 VS Code"
 wget -qO /tmp/code.deb "https://update.code.visualstudio.com/latest/linux-deb-x64/stable"
@@ -59,6 +59,7 @@ fi
 echo
 echo "== Versions obtenues"
 git --version
+python --version
 python3 --version
 python3 -m pip --version
 sudo -u "$STAGIAIRE" -H env DONT_PROMPT_WSL_INSTALL=1 code --no-sandbox --version | head -1
@@ -66,4 +67,4 @@ google-chrome --version
 sudo -u "$STAGIAIRE" -H bash -lc 'export PATH="$HOME/.local/bin:$PATH"; claude --version'
 sudo -u "$STAGIAIRE" -H env DONT_PROMPT_WSL_INSTALL=1 code --no-sandbox --list-extensions --show-versions
 echo
-echo "Terminé. Le stagiaire ouvre VS Code sur $MAISON/ambient-it-j1/exercices/01-trois-outils/depart"
+echo "Terminé. Le stagiaire ouvre VS Code sur la racine du dépôt : $MAISON/ambient-it-j1"
