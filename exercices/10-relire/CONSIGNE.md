@@ -8,12 +8,12 @@
 
 `exercices/10-relire/depart/` contient la page complète avec sa carte. On la relit avec la grille de l'exercice 5, on corrige, on mesure.
 
-0. La commande `/verifier-page` vient de l'exercice 5 : ses deux fichiers sont à la racine de votre dossier (`.claude/commands/verifier-page.md` et `.github/prompts/verifier-page.prompt.md`). Si vous ne les avez pas, copiez-les depuis `ressources/commandes/` : `verifier-page.md` dans `.claude/commands/` et `verifier-page.prompt.md` dans `.github/prompts/` (créez les dossiers à la racine s'ils n'existent pas : clic droit dans l'explorateur, « Nouveau dossier »). Puis relancez la session Claude Code.
+0. La commande `/verifier-page` vient de l'exercice 5 : c'est le skill `.claude/skills/verifier-page/SKILL.md`, à la racine de votre dossier, lu par Claude Code et par Copilot. Si vous ne l'avez pas, copiez le dossier `ressources/skills/verifier-page` dans `.claude/skills/` à la racine (créez `.claude/skills/` s'il n'existe pas : clic droit dans l'explorateur, « New Folder »). Puis ouvrez une nouvelle conversation dans chaque outil.
 1. Dans Claude Code, avec les chemins de la page :
 
        /verifier-page exercices/10-relire/depart/index.html exercices/10-relire/depart/style.css
 
-   Lire le rapport. Dans Copilot Chat : `/verifier-page` suivi des deux mêmes chemins, ou « Chat: Run Prompt ». Comparer.
+   Lire le rapport. Dans Copilot Chat (New Chat, sélecteur sur Agent) : `/verifier-page` suivi des deux mêmes chemins. Comparer.
 2. Appliquer au moins deux corrections de la liste « À corriger », à la main ou en demandant à l'outil. Nommez le point, pas le numéro, car la numérotation change d'un rapport à l'autre : « Dans exercices/10-relire/depart/, applique les corrections du rapport sur le contraste du bouton et de l'encadré. »
 3. Mesurer avant et après avec Lighthouse : ouvrir `exercices/10-relire/depart/index.html` dans Chrome, F12, onglet « Lighthouse », cocher Accessibilité et Bonnes pratiques, mode Ordinateur, « Analyser ». Créer `exercices/10-relire/depart/lighthouse.md` et y noter les deux scores.
 4. Committer. Placez-vous dans le dossier de l'exercice, contrôlez, puis committez :
