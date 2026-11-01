@@ -1,4 +1,10 @@
-Relis les fichiers $ARGUMENTS selon la grille ci-dessous (chemins complets depuis la racine, par exemple exercices/05-commande-a-moi/depart/index.html exercices/05-commande-a-moi/depart/style.css). Si aucun fichier n’est donné, demande-moi les chemins de index.html et style.css. Ne modifie rien : tu rends un rapport.
+---
+name: verifier-page
+description: Relire une page HTML et sa feuille de style selon la grille d'accessibilité du projet, sans rien modifier.
+argument-hint: chemin/index.html chemin/style.css
+disable-model-invocation: true
+---
+Relis les fichiers $ARGUMENTS selon la grille ci-dessous (chemins complets depuis la racine, par exemple exercices/05-commande-a-moi/depart/index.html exercices/05-commande-a-moi/depart/style.css). Si aucun fichier n'est donné, demande-moi les chemins de index.html et style.css. Ne modifie rien : tu rends un rapport.
 
 Grille :
 1. Structure : HTML sémantique (header, nav, main, section, footer), un seul h1, titres sans saut de niveau, chaque section reliée à son titre par aria-labelledby.
