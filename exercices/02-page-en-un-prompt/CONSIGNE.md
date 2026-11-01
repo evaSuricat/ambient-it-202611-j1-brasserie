@@ -7,9 +7,9 @@
 ## Ce qu'on fait
 
 1. Ouvrir `depart/` dans Claude Code (panneau VS Code : bouton « + », ou terminal : `claude` depuis le dossier).
-2. Lancer le chrono et donner un seul prompt :
+2. Lancer le chrono et donner un seul prompt (Créer une nouvelle session) 
 
-   > Lis brief.md. Crée index.html et style.css pour cette page, en respectant les contraintes techniques du brief. Pas de framework, pas de police web, pas de script.
+   > Dans exercices/02-page-en-un-prompt/depart/, lis brief.md. Crée index.html et style.css dans ce même dossier, en respectant les contraintes techniques du brief. Pas de framework, pas de police web, pas de script.
 
 3. Accepter les créations de fichiers. Ouvrir `index.html` dans Chrome (double-clic dans l'explorateur Windows, ou clic droit dans VS Code, « Reveal in File Explorer »).
 4. Arrêter le chrono à la première page affichée. Noter le temps dans `chrono.md`.
