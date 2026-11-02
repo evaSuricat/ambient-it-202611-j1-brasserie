@@ -20,7 +20,7 @@
 
    Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/15-agent-photos/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) veut dire que le chemin ou le dossier de départ est faux : rien n'a été écrit, vérifiez que vous êtes à la racine (`pwd`).
 
-1. Chrono. Un seul prompt à Claude Code. Il crée l'environnement virtuel `.venv` à la **racine** du dépôt, là où VS Code le retrouve tout seul :
+1. **Lancez un chrono** (téléphone ou montre), puis donnez un seul prompt à Claude Code. Il crée l'environnement virtuel `.venv` à la **racine** du dépôt, là où VS Code le retrouve tout seul :
 
    > Dans exercices/15-agent-photos/depart/photos/, huit images. Écris exercices/15-agent-photos/depart/redimensionner.py qui produit pour chacune trois largeurs (480, 960, 1600) dans exercices/15-agent-photos/depart/photos/petit, exercices/15-agent-photos/depart/photos/moyen et exercices/15-agent-photos/depart/photos/grand, en JPEG qualité 85, puis lance-le. Ensuite remplace les deux blocs « photo à venir » de exercices/15-agent-photos/depart/index.html par des images responsives (srcset et sizes) avec un texte alternatif qui décrit l'image, et ajoute une galerie de quatre photos dans la section « L'esprit du lieu ». Propose ensuite un message de commit. Si tu as besoin d'une bibliothèque, crée un environnement virtuel .venv à la racine du dépôt (pas dans depart/) et installe-la dedans, avec un requirements.txt à côté de redimensionner.py.
 
@@ -32,9 +32,9 @@
        python servir.py
 
    Résultat attendu : `pwd` affiche un chemin qui se termine par `exercices/15-agent-photos/depart`, puis le serveur affiche une adresse et reste en attente (`Ctrl+C` l'arrête). Ouvrez http://127.0.0.1:8000/. Les images s'affichent. F12, onglet Réseau, réduire la largeur de la fenêtre : la taille de l'image chargée change (1600, puis 960, puis 480 pixels).
-4. Lire les textes alternatifs. `AGENTS.md` les exige depuis E4 : vérifiez qu'ils décrivent vraiment ce qu'on voit sur la photo, pas le nom du fichier ni le bandeau de texte de l'image.
+4. Lire les textes alternatifs. `AGENTS.md` les exige depuis E4 : vérifiez qu'ils décrivent vraiment ce qu'on voit sur la photo, pas le nom du fichier.
 5. Vérifier que `.venv` n'apparaît pas dans l'explorateur de changements : à la racine, `git status` ne doit pas le lister, il est ignoré par git.
-6. Chrono arrêté, commit avec le message proposé. Relisez-le avant de committer : s'il cite un fichier qui n'existe pas (par exemple `requirements.txt` si l'installation a été refusée), corrigez-le.
+6. **Arrêtez le chrono et notez le temps**, puis committez avec le message proposé. Relisez-le avant de committer : s'il cite un fichier qui n'existe pas (par exemple `requirements.txt` si l'installation a été refusée), corrigez-le.
 
 ## Livrable
 

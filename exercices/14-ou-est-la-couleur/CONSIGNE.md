@@ -28,9 +28,9 @@ Trois questions, posées d'abord à Copilot Chat avec `@workspace`, puis à Clau
 
 Puis la même chose dans Claude Code : mêmes questions, **sans** `@workspace`. Claude Code l'ignore sans dégât, mais il ne sert à rien. Question 1 : `Dans exercices/14-ou-est-la-couleur/depart/, où la couleur principale de la page est-elle définie ?` Les deux autres, telles quelles, dans la même conversation.
 
-Enfin la recherche classique, limitée au dossier de l'exercice. Sans cette limite, elle couvre tous les exercices et renvoie une trentaine de lignes. Dans l'explorateur, clic droit sur le dossier `14-ou-est-la-couleur`, puis « Find in Folder… » (libellé à vérifier à l'écran). Autre façon : ouvrir Ctrl+Maj+F et saisir `exercices/14-ou-est-la-couleur` dans le champ « files to include ». Chercher `F26B1D`, puis `--orange`.
+Enfin la recherche classique, limitée au dossier `depart/` de l'exercice. Sans cette limite, elle couvre tous les exercices et renvoie une trentaine de lignes. Dans l'explorateur, clic droit sur `14-ou-est-la-couleur/depart`, puis « Find in Folder… » (Maj+Alt+F). Autre façon : ouvrir Ctrl+Maj+F et saisir `exercices/14-ou-est-la-couleur/depart` dans le champ « files to include ». Chercher `F26B1D`, puis `--orange`.
 
-Résultat attendu avec la page fournie : `F26B1D` donne 2 résultats dans 2 fichiers (`style.css` ligne 3, `brief.md` ligne 39) ; `--orange` donne 8 résultats dans 2 fichiers (7 dans `style.css`, dont `--orange-fonce` qui contient aussi `--orange`, et 1 dans `css/plan-acces.css`, le repère orange du plan d'accès). Si vous avez repris votre page, vos nombres peuvent différer de quelques lignes : la définition de `F26B1D` dans `style.css` ligne 3 reste la même. Si vous en voyez beaucoup plus, la recherche n'est pas limitée au dossier.
+Résultat attendu avec la page fournie : `F26B1D` donne 2 résultats dans 2 fichiers (`style.css` ligne 3, `brief.md` ligne 39) ; `--orange` donne 8 résultats dans 2 fichiers (7 dans `style.css`, dont `--orange-fonce` qui contient aussi `--orange`, et 1 dans `css/plan-acces.css`, le repère orange du plan d'accès). Si vous avez repris votre page, vos nombres et vos lignes diffèrent : par exemple 4 résultats pour `F26B1D` et 11 pour `--orange`, avec la définition dans `style.css` vers la ligne 12. Si vous en voyez beaucoup plus, la recherche n'est pas limitée au dossier.
 
 ## Livrable
 

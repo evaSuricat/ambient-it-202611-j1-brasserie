@@ -19,13 +19,17 @@ Claude Code appelait autrefois cela une « commande » (`.claude/commands/`) : l
 
 La page de l'exercice est dans `exercices/05-commande-a-moi/depart/`. Le skill se crée à la RACINE de votre dossier, à côté de `AGENTS.md`. Rangé dans `depart/`, il serait invisible.
 
-0. **Reprendre votre page.** Si l'exercice 4 a abouti, copiez la page qu'il a produite (celle de Claude Code, avec son plan d'accès) dans `exercices/05-commande-a-moi/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie. Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+0. **Reprendre votre page.** Si l'exercice 4 a abouti, copiez la page qu'il a produite (celle de Claude Code, avec son plan d'accès) dans `exercices/05-commande-a-moi/depart/`, en écrasant celle qui s'y trouve ; sinon, gardez celle qui est fournie.
 
-       cp exercices/04-regles-du-projet/depart/index.html exercices/05-commande-a-moi/depart/
-       cp exercices/04-regles-du-projet/depart/style.css exercices/05-commande-a-moi/depart/
-       cp exercices/04-regles-du-projet/depart/css/* exercices/05-commande-a-moi/depart/css/
+D'abord, repérez où est cette page : le dossier qui contient son `index.html`, son `style.css` et son dossier `css/`. C'est `exercices/04-regles-du-projet/depart/` si vous l'avez laissée sur place. Si vous avez rangé vos essais d'E4 dans des sous-dossiers, c'est celui de l'essai Claude Code, par exemple `exercices/04-regles-du-projet/depart/claude_avec_regles/` : remplacez alors `04-regles-du-projet/depart/` par ce chemin dans les trois lignes.
 
-   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/05-commande-a-moi/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) sur la troisième ligne veut dire que l'exercice 4 n'a pas créé de dossier `css/` (la règle 2 n'a pas été appliquée) : reprenez alors la page fournie avec `git restore exercices/05-commande-a-moi/depart`, qui remet les fichiers fournis dans ce dossier et ne touche à rien d'autre. Sur les deux premières lignes, l'erreur veut dire que vous n'êtes pas à la racine (`pwd`) : rien n'a été écrit.
+Ces lignes se lancent depuis la racine de votre dossier `stagiaire_J1`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+
+      cp exercices/04-regles-du-projet/depart/index.html exercices/05-commande-a-moi/depart/
+      cp exercices/04-regles-du-projet/depart/style.css exercices/05-commande-a-moi/depart/
+      cp exercices/04-regles-du-projet/depart/css/* exercices/05-commande-a-moi/depart/css/
+
+Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/05-commande-a-moi/depart/` (le dossier `css/` ne doit pas contenir un second `css/`). Une erreur « No such file » (« Cannot find path » sous PowerShell) sur les deux premières lignes veut dire que le chemin de départ est faux : vous n'êtes pas à la racine (`pwd`), ou la page d'E4 est dans un sous-dossier que vous n'avez pas indiqué ; rien n'a été écrit. Sur la troisième ligne seulement, l'exercice 4 n'a pas créé de dossier `css/` (la règle 2 n'a pas été appliquée) : reprenez alors la page fournie avec `git restore exercices/05-commande-a-moi/depart`, qui remet les fichiers fournis dans ce dossier et ne touche à rien d'autre.
 
 1. **Créer le fichier.** Dans l'explorateur de VS Code, cliquez d'abord dans le vide sous la liste des fichiers (aucun dossier sélectionné), puis sur l'icône « New File », et tapez ce nom tel quel :
 
@@ -54,7 +58,7 @@ La page de l'exercice est dans `exercices/05-commande-a-moi/depart/`. Le skill s
 
 3. **Lancer le skill dans Claude Code.** Nouvelle conversation (bouton +) : une conversation déjà ouverte ne voit pas un skill créé après elle. Tapez :
 
-       /verifier-page exercices/05-commande-a-moi/depart/index.html exercices/05-commande-a-moi/depart/style.css
+/verifier-page exercices/05-commande-a-moi/depart/index.html exercices/05-commande-a-moi/depart/style.css
 
 4. **Lancer le même skill dans Copilot.** New Chat, remettez le sélecteur sur Agent, puis la même ligne. Si Copilot demande « Run in terminal? » pour calculer des contrastes en Python, lisez la commande : des calculs et des `print`, aucun fichier. Acceptez si c'est le cas.
 
