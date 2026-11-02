@@ -1,0 +1,18 @@
+/* Mode sombre · suit le réglage du système (prefers-color-scheme)
+   Seuls les rôles de couleur de style.css changent. Les zones bleu nuit
+   (héros, « Comment venir », pied de page), les boutons et le schéma du plan
+   d'accès gardent leurs couleurs.
+   Contrastes calculés (texte sur fond, minimum 4,5 pour 1) :
+   - crème sur #121A2B (sections « fond ») : 16,2 pour 1
+   - crème sur #0B111E (sections alternées) : 17,6 pour 1
+   - crème sur bleu nuit (boîtes)           : 13,4 pour 1
+   Le vert houblon ne sert qu'aux filets, jamais au texte. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --texte: var(--creme);
+    --fond: #121A2B;
+    --fond-alt: #0B111E;
+    --fond-boite: var(--nuit);
+  }
+}

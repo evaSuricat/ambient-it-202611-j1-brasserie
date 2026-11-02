@@ -2,62 +2,73 @@
 
 **Point du programme** : détection et correction de bugs avec l'IA (SonarQube, ZAP, LLM).
 
-**Durée** : 15 minutes.
+**Durée** : 20 minutes.
+
+## L'idée
+
+`exercices/12-bug-glisse/depart/` contient la page de l'exercice 11, mais trois bugs s'y sont glissés. Trois outils les cherchent : le navigateur, l'IA, et SonarQube for IDE, un analyseur de code qui applique des règles écrites à l'avance, sans modèle. Chacun voit ce que les autres ne voient pas.
 
 ## Ce qu'on fait
 
-`depart/` contient la page de l'exercice 11, mais la carte ne s'affiche plus. Deux bugs, pas un. Chaque commande de cet exercice se lance depuis `exercices/12-bug-glisse/depart`.
+0. **Préparer.**
 
-0. **Choisir votre page.** Deux chemins.
+   Installez l'extension : dans VS Code, Ctrl+Maj+X, cherchez **SonarQube for IDE**, éditeur **SonarSource**, coche bleue, **Install**. Une icône apparaît dans la barre de gauche. Il n'y a pas de compte à connecter : fermez ce qu'il propose.
 
-   **(a) Par défaut : gardez le `depart/` fourni.** C'est le scénario prévu : la page est déjà cassée, et vous n'avez rien à copier. Passez à l'étape 1.
+   Gardez le `depart/` fourni : la page est déjà cassée, il n'y a rien à copier. Enregistrez ce point de départ, depuis la racine de votre dossier `stagiaire_J1` :
 
-   **(b) Fil rouge : cassez votre propre page.** Si l'exercice 11 a abouti et que vous voulez garder votre page, copiez-la dans `exercices/12-bug-glisse/depart/`, puis posez vous-même les deux bugs. Les lignes `cp` se lancent depuis la racine de votre dossier `stagiaire_J1`, avant tout `cd`, une ligne après l'autre (elles marchent sous Windows comme sous Linux) :
+       git add -A
+       git commit -m "E12 : état avant la chasse aux bugs"
 
-       cp exercices/11-carte-en-base/depart/index.html exercices/12-bug-glisse/depart/
-       cp exercices/11-carte-en-base/depart/style.css exercices/12-bug-glisse/depart/
-       cp exercices/11-carte-en-base/depart/css/* exercices/12-bug-glisse/depart/css/
-       cp exercices/11-carte-en-base/depart/script.js exercices/12-bug-glisse/depart/
-       cp exercices/11-carte-en-base/depart/servir.py exercices/12-bug-glisse/depart/
-       cp exercices/11-carte-en-base/depart/charger.py exercices/12-bug-glisse/depart/
-       cp exercices/11-carte-en-base/depart/carte.db exercices/12-bug-glisse/depart/
+   **Si vous préférez casser votre propre page**, copiez-la depuis `exercices/11-carte-en-base/depart/` (`index.html`, `style.css`, `css/`, `script.js`, `servir.py`, `charger.py`, `carte.db`), puis posez les trois bugs : dans `script.js`, remplacez `/api/carte` par `/api/cartes` ; dans `index.html`, retirez `lang="fr"` de la balise `<html>`, et retirez le `</div>` qui ferme la première colonne de la carte, juste après sa liste. Ctrl+S.
 
-   Résultat attendu : aucun message, et les fichiers copiés apparaissent dans `exercices/12-bug-glisse/depart/` (pas de `css/css/`). Puis les deux bugs, dans les fichiers copiés :
-
-   - dans `script.js`, à la ligne `const reponse = await fetch("/api/carte");`, ajoutez un `s` : `"/api/cartes"` ;
-   - dans `index.html`, section « La carte », supprimez la ligne `</div>` qui ferme la colonne « À manger », celle qui suit `<ul data-categorie="plat"></ul>` et précède `<noscript>` ; la colonne « Bières et cidre » garde le sien. Si le balisage de votre page est autre, supprimez la fermeture de la dernière colonne de la carte.
-
-   Enregistrez les deux fichiers (Ctrl+S) avant de continuer. Le reste de l'exercice est le même : la carte est vide, le Happy hour passe à droite. À l'exercice 13, vous reprendrez la page réparée de l'exercice 12, la vôtre ou celle du `depart/`.
-
-1. Dans le terminal, placez-vous dans le dossier de l'exercice et vérifiez où vous êtes :
+1. **Lancer la page.** Dans le terminal :
 
        cd exercices/12-bug-glisse/depart
-       pwd
-
-   Résultat attendu : un chemin qui se termine par `exercices/12-bug-glisse/depart`. Sinon, revenez à la racine avec `cd ../../..` et recommencez.
-
-2. Lancer le chargement de la base :
-
        python charger.py
 
-   Résultat attendu : une ligne qui annonce vingt lignes chargées. Ce script réécrit `carte.db`, que git suit : `git status` va le montrer modifié. C'est normal. Pour le remettre dans son état d'origine, quand vous voulez : `git restore exercices/12-bug-glisse/depart/carte.db` depuis la racine du dépôt (`cd ../../..`), ou `git restore carte.db` depuis le dossier de l'exercice. Cela ne touche qu'à ce fichier.
-3. Lancer le serveur dans un **deuxième terminal** (bouton **+** du panneau Terminal), qui reste occupé tant que le serveur tourne :
+   Si `python` n'existe pas (Mac, certains Linux), tapez `python3`. Résultat attendu : une ligne qui annonce vingt lignes chargées. Ce script réécrit `carte.db` : `git status` peut le montrer modifié, c'est normal.
+
+   Dans un **deuxième terminal** (bouton **+** du panneau Terminal), depuis la racine :
 
        cd exercices/12-bug-glisse/depart
        python servir.py
 
-   Résultat attendu : une adresse affichée, puis plus rien (ce serveur n'écrit pas les requêtes). `Ctrl+C` l'arrête. Ouvrir http://127.0.0.1:8000/ : la carte est vide. F12, onglet Console et onglet Réseau : regarder avant de demander.
-4. Décrire le **symptôme** à l'outil, pas la cause supposée. Dans Copilot Chat, `/fix` avec `script.js` ouvert, ou dans Claude Code :
+   Résultat attendu : une adresse, puis le terminal reste en attente. `Ctrl+C` l'arrête.
 
-   > Dans exercices/12-bug-glisse/depart/, la carte ne s'affiche plus dans la page servie par servir.py. La console du navigateur dit : [coller le message]. Trouve la cause et corrige.
+2. **Regarder avant de demander.** Dans Chrome, ouvrez http://127.0.0.1:8000/, pas le fichier par double-clic. Descendez à La carte : « La carte n'a pas pu être chargée. »
 
-5. Un bug corrigé, la carte revient. Regardez bien la page : l'encadré vert « Happy hour » est passé à droite de la carte, comme une troisième colonne. Le second bug se voit donc, mais sa cause ne se devine pas : la page s'affiche, la structure est cassée. L'outil a probablement déclaré le reste correct. Lancer l'analyse **SonarQube for IDE** (extension VS Code, analyse locale) : clic droit sur le dossier, « SonarQube for IDE: Analyze all project files », ou ouvrir `index.html` et regarder l'onglet Problèmes. Vous pouvez aussi demander à l'outil de relire le balisage de `index.html` sans rien modifier.
-6. Corriger le second, noter les deux dans `rapport-sonar.md` (à créer dans `exercices/12-bug-glisse/depart/`).
+   Le même message apparaît quand on ouvre la page par double-clic : sans serveur, elle ne peut pas appeler la base. Ici, le serveur tourne et l'adresse commence par `http://127.0.0.1` : le problème est ailleurs. F12, onglet **Console** : lisez l'erreur rouge, puis F5.
+
+3. **Premier bug : décrire le symptôme, pas la cause supposée.** Dans Claude Code, ou dans Copilot Chat avec `/fix` et `script.js` ouvert :
+
+       Dans exercices/12-bug-glisse/depart/, la carte ne s'affiche plus dans la page servie par servir.py. La console du navigateur dit : [coller le message]. Trouve la cause et corrige.
+
+   Résultat attendu : une seule lettre corrigée dans `script.js`. Lisez la correction avant de l'accepter, puis F5 : la carte revient.
+
+4. **Deuxième bug : il se voit, mais rien ne le dit.** Regardez la page : les deux colonnes sont empilées dans la moitié gauche, et la moitié droite est vide. La console n'affiche aucune erreur. Décrivez ce que vous voyez :
+
+       Dans exercices/12-bug-glisse/depart/, la carte s'affiche, mais À manger est sous Bières et cidre dans la moitié gauche, au lieu de deux colonnes. La console n'affiche aucune erreur. Trouve la cause et corrige.
+
+   Autre façon de le voir sans l'IA, à faire avant d'envoyer le prompt : dans la page, clic droit sur le titre « Bières et cidre », **Inspecter**. Dans l'onglet Elements, le `<div>` d'« À manger » est rangé sous le `<ul>` des bières, à l'intérieur de leur colonne. Le navigateur ne signale pas ce genre d'erreur : il répare à sa façon, et Elements montre ce qu'il a compris.
+
+5. **Troisième bug : personne ne l'a vu.** Ouvrez `exercices/12-bug-glisse/depart/index.html`, puis l'onglet **Problems** (Ctrl+Maj+M) ou l'onglet **SonarQube** à côté. SonarQube for IDE analyse le fichier ouvert et signale des lignes `Web:…`. Cliquez sur une remarque pour lire son explication :
+
+   - **`Web:S5254`, ligne 2** : la balise `<html>` n'a pas d'attribut `lang`. C'est le troisième bug. Rien à l'écran, rien dans la console, mais un lecteur d'écran ne sait plus quelle langue lire. Corrigez : `<html lang="fr">`, Ctrl+S. La remarque disparaît.
+   - **`Web:AvoidCommentedOutCodeCheck`** : Sonar prend pour du code mort les commentaires laissés sur les emplacements photo. Ce sont des consignes de travail, pas du code oublié : c'est à vous de juger. On les garde tant que les photos ne sont pas là.
+
+   Sonar n'a pas signalé le `</div>` du deuxième bug. C'est aussi une information : un outil ne couvre que ses règles.
+
+6. **Noter**, dans `exercices/12-bug-glisse/depart/rapport-sonar.md` (à créer), les trois bugs : comment chacun a été trouvé, et par qui.
+
+7. **Committer.** Arrêtez le serveur (Ctrl+C), puis, depuis la racine :
+
+       git add -A
+       git commit -m "E12 : trois bugs corrigés, rapport"
 
 ## Livrable
 
-Page réparée, `rapport-sonar.md` : les deux bugs, comment chacun a été trouvé, par qui (vous, le navigateur, le LLM, Sonar).
+Page réparée (deux colonnes, carte chargée, `lang="fr"`), `rapport-sonar.md`.
 
 ## Ce qu'on retient
 
-Le navigateur a vu le premier bug avant tout le monde. Sonar a trouvé la cause du second, que l'œil voit sans l'expliquer. Le LLM a corrigé les deux une fois qu'on lui a dit quoi regarder. Ce sont trois outils différents, pas trois versions du même.
+Le navigateur a vu le premier bug avant tout le monde. L'œil a vu le deuxième, que la console et Sonar ne signalent pas, et l'IA en a trouvé la cause une fois le symptôme décrit. Sonar a vu le troisième, que personne d'autre n'avait remarqué. Ce sont trois outils différents, pas trois versions du même. Tous se trompent ou se taisent parfois : on lit et on juge chaque remarque.

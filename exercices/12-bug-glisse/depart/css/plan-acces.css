@@ -1,10 +1,61 @@
-/* Plan d'accès (section Venir) : schéma sans échelle et lien OpenStreetMap */
-.plan-acces { margin: 1.5rem 0 0; max-width: 420px; }
-.plan-acces svg { display: block; width: 100%; height: auto; font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
-.plan-acces text { fill: var(--texte); }
-.plan-acces .plan-acces__m { fill: var(--creme); font-weight: 700; font-size: 16px; }
-.plan-acces__trajet { stroke: var(--bleu); stroke-width: 3; stroke-dasharray: 6 6; }
-.plan-acces__metro { fill: var(--bleu); }
-.plan-acces__lieu { fill: var(--orange); }
-.plan-acces figcaption { margin-top: 0.5rem; font-size: 0.95rem; }
-.plan-acces a { color: var(--bleu); font-weight: 700; }
+/* Plan d'accès · schéma du trajet métro, Le Pigala
+   Contrastes (texte sur fond, minimum 4,5 pour 1) :
+   - bleu nuit sur crème : 13 pour 1
+   - lien orange sur bleu nuit : 4,7 pour 1 (le lien est posé sur le fond nuit
+     de la section, jamais sur le cadre crème du schéma)
+   Le vert houblon ne sert qu'au tracé du trajet, jamais au texte. */
+.plan-acces {
+  margin: 0 0 1.5rem;
+}
+
+.plan-acces-cadre {
+  max-width: 24rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem;
+  background: var(--creme);
+  border: 3px solid var(--houblon);
+  border-radius: var(--rayon);
+}
+
+.plan-acces-cadre svg {
+  display: block;
+  width: 100%;
+}
+
+.plan-trajet {
+  stroke: var(--houblon);
+  stroke-width: 4;
+  stroke-dasharray: 2 8;
+  stroke-linecap: round;
+}
+
+.plan-metro {
+  fill: var(--nuit);
+}
+
+.plan-lieu {
+  fill: var(--orange);
+  stroke: var(--nuit);
+  stroke-width: 3;
+}
+
+.plan-ligne {
+  fill: var(--creme);
+  font-size: 14px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.plan-texte {
+  fill: var(--nuit);
+  font-size: 15px;
+}
+
+.plan-texte-fort {
+  font-weight: 800;
+}
+
+.plan-acces-note {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+}

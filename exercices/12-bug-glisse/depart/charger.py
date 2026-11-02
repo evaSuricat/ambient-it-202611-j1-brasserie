@@ -1,44 +1,37 @@
-"""Crée carte.db (SQLite) et la remplit depuis carte.csv.
-
-Relançable : la table est vidée avant chaque chargement.
-
-    python charger.py
-"""
 import csv
 import sqlite3
 from pathlib import Path
 
-DOSSIER = Path(__file__).resolve().parent
+DOSSIER = Path(__file__).parent
+BASE = DOSSIER / "carte.db"
 CSV = DOSSIER / "carte.csv"
-DB = DOSSIER / "carte.db"
 
 
-def main():
-    with sqlite3.connect(DB) as connexion:
-        connexion.execute(
-            """
-            CREATE TABLE IF NOT EXISTS carte (
+def charger():
+    with open(CSV, newline="", encoding="utf-8-sig") as f:
+        lignes = [
+            (l["categorie"], l["nom"], l["description"], float(l["prix"]))
+            for l in csv.DictReader(f)
+        ]
+
+    with sqlite3.connect(BASE) as c:
+        c.execute(
+            """CREATE TABLE IF NOT EXISTS carte (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 categorie TEXT NOT NULL,
                 nom TEXT NOT NULL,
-                description TEXT NOT NULL DEFAULT '',
+                description TEXT NOT NULL,
                 prix REAL NOT NULL
-            )
-            """
+            )"""
         )
-        connexion.execute("DELETE FROM carte")
-        with open(CSV, encoding="utf-8", newline="") as fichier:
-            lignes = [
-                (l["categorie"], l["nom"], l["description"], float(l["prix"]))
-                for l in csv.DictReader(fichier)
-            ]
-        connexion.executemany(
+        c.execute("DELETE FROM carte")
+        c.execute("DELETE FROM sqlite_sequence WHERE name = 'carte'")
+        c.executemany(
             "INSERT INTO carte (categorie, nom, description, prix) VALUES (?, ?, ?, ?)",
             lignes,
         )
-        nombre = connexion.execute("SELECT COUNT(*) FROM carte").fetchone()[0]
-    print(f"{nombre} lignes dans {DB.name}")
+    return len(lignes)
 
 
 if __name__ == "__main__":
-    main()
+    print(f"{charger()} lignes chargées dans {BASE.name}")
